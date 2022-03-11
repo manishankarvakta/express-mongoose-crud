@@ -1,6 +1,7 @@
 const express = require('express');
 const route = express.Router();
-const services = require('../services/render')
+const services = require('../services/render');
+const userController = require('../controller/user');
 
 
 /*
@@ -20,5 +21,12 @@ route.get('/add-user', services.addUser);
 * @method GET/
 */ 
 route.get('/update-user', services.updateUser);
+
+
+// API Route
+route.post('/api/users', userController.create);
+route.get('/api/users', userController.find);
+route.put('/api/users/:id', userController.update);
+route.delete('/api/users/:id', userController.delete);
 
 module.exports = route;
