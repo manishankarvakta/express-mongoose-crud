@@ -24,18 +24,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto@gf.co</td>
-                          <td>Male</td>
-                          <td>Active</td>
-                          <td>
-                              <a href="/update-user" class="text-dark mx-2"><i class="fas fa-pencil-alt"></i></a>
-                              <a href="" class="text-dark mx-2"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                        </tr>
-                      </tbody>
+                        <!-- include show_users -->
+                        <%- include('include/_show_users') %>
+                        <!-- /include show_users -->    
+                    </tbody>
                 </table>
             </form>
         </div>

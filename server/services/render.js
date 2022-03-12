@@ -6,7 +6,13 @@ exports.homeRoute = (req, res) =>{
 }
 
 exports.userRoute = (req, res) =>{
-    res.render('users');
+    axios.get('http://localhost:3000/api/users')
+    .then(function(responce){
+        res.render('users', {users: responce.data});
+    })
+    .catch(err=>{
+        res.send(err)
+    })
 }
 
 exports.addUser = (req, res) =>{
