@@ -11,6 +11,12 @@ const userController = require('../controller/user');
 route.get('/', services.homeRoute);
 
 /*
+* @description Users Route
+* @method GET/
+*/ 
+route.get('/users', services.userRoute);
+
+/*
 * @description AddUser Route
 * @method GET/
 */ 

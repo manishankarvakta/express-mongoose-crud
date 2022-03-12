@@ -1,0 +1,48 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+<!-- main -->
+<div id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-5">
+                <a href="/add-user" class="btn btn-outline-dark">Create User <i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <form action="/" class="form">
+                <table class="table">
+                    <thead class=" table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>@Email</th>
+                            <th>Gender</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto@gf.co</td>
+                          <td>Male</td>
+                          <td>Active</td>
+                          <td>
+                              <a href="/update-user" class="text-dark mx-2"><i class="fas fa-pencil-alt"></i></a>
+                              <a href="" class="text-dark mx-2"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                        </tr>
+                      </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- main -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
