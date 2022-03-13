@@ -59,33 +59,27 @@ exports.find = (req, res)=>{
 }
 
 
-// update user 
+// Update a new idetified user by user id
 exports.update = (req, res)=>{
-    // validate request
     if(!req.body){
-        res.status(400)
-        .send({message: 'content can not be empty!'});
-        return;
+        return res
+            .status(400)
+            .send({ message : "Data to update can not be empty"})
     }
 
     const id = req.params.id;
-      
-    User
-    .findOneAndUpdate(id, req.body, {new: true})
-    .then(data=>{
-        if(!data){
-            res.status(500)
-            .send({message: `Can't update user with id ${id}. Maybe user not found.`})
-        }else{
-            res.send(data)
-        }
-    })
-    .catch(err=>{
-        res.status(500).send({message: `Error update user informations.`})
-
-    })
+    User.findByIdAndUpdate(id, req.body, { useFindAndModify: false})
+        .then(data => {
+            if(!data){
+                res.status(404).send({ message : `Cannot Update user with ${id}. Maybe user not found!`})
+            }else{
+                res.send(data)
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({ message : "Error Update user information"})
+        })
 }
-
 
 // delete user 
 exports.delete = (req, res)=>{

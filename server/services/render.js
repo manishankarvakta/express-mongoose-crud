@@ -12,7 +12,7 @@ exports.userRoute = (req, res) =>{
     })
     .catch(err=>{
         res.send(err)
-    })
+    })   
 }
 
 exports.addUser = (req, res) =>{

@@ -1,19 +1,26 @@
 const updateUser = document.querySelector("#update");
-const axios = require('axios');
-const res = require('express/lib/response');
+
 
 updateUser.addEventListener('submit', (event)=>{
+	event.preventDefault();
     const data = serializeForm("#update");
-
-    axios.put(`http://localhost:3000/api/update-user/${data.id}`, { data })
-    .then(responce=>{
-
-    })
-    .catch(err=>{
-        console.log(err)
-    });
-
-    event.preventDefault();
+	const URI = `http://localhost:3000/api/users?${data.id}`;
+	console.log(data.id)
+	console.log(data)
+	fetch(`http://localhost:3000/api/users?id=${data.id}`, {
+		method: 'PUT', // or 'PUT'
+		headers: {
+			'Content-Type': 'application/json',
+	},
+		body: JSON.stringify(data),
+	})
+	.then(response => response.json())
+	.then(user => {
+		console.log('Success:', user);
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+	}); 
 
 
 })
