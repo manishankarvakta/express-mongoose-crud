@@ -6,7 +6,7 @@
     <td><%= users[i].gender %></td>
     <td><%= users[i].status %></td>
     <td>
-        <a href="/update-user" class="text-dark mx-2"><i class="fas fa-pencil-alt"></i></a>
+        <a href="/update-user?id=<%= users[i]._id %>" class="text-dark mx-2"><i class="fas fa-pencil-alt"></i></a>
         <a href="" class="text-dark mx-2"><i class="fas fa-trash-alt"></i></a>
   </td>
   </tr>
